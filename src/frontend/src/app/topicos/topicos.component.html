@@ -1,0 +1,22 @@
+<div class="topicos-wrapper" [ngStyle]="{'height': windowHeight}">
+    <div class="topicos-panel">
+        <div class="topico-exercicio">
+            <div class="item sm"> <span class="verbo">Verbe</span></div>
+            <div class="item sm"> <span class="pronome">Les pronoms sujets</span></div>
+            <div class="item sm"> <span class="tipo">type de question</span></div>
+            <div class="break"></div>
+            <div class="item sm"> <span class="text">{{topico.verbo}}</span></div>
+            <div class="item sm"> <span class="text">{{topico.pronome}}</span></div>
+            <div class="item sm"> <span class="text">{{topico.tipo}}</span></div>
+            <div class="break"></div>
+            <div class="item md"><button type="button" (click)="updateTopic()">{{buttonText}}</button></div>
+            <div class="break"></div>
+            <div class="item"><button class="secundario" type="button" (click)="newVerb()">Include verbe</button>
+            </div>
+            <div class="item "><button class="secundario" type="button" (click)="listVerb()">lister les verbes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-topicos-modal [(open)]="openedModal" (closed)="modalResponse($event)"></app-topicos-modal>
+<app-topicos-list [(open)]="listModal" (closed)="listResponse($event)" [(topicos)]="topicos"></app-topicos-list>

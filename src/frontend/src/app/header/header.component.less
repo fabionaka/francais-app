@@ -1,0 +1,135 @@
+@height: 50px;
+@color-blue: #0055a4;
+@color-white: #fff;
+@color-red: #ef4135;
+.header-main {
+  background-color: @color-blue;
+  height: @height;
+  overflow: hidden;
+  position: relative;
+  .drag{
+    -webkit-app-region: drag;
+    margin-left: 6em;
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      color: lighten(@color-blue, 60%);
+      font-weight: 100;
+      margin-top: 9px;
+      margin-left: 0;
+    }
+  }
+
+  
+
+  .stripes {
+    background: @color-white;
+    position: absolute;
+    height: @height;
+    width: 25%;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+
+    &:before {
+      display: block;
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 0px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 50px solid @color-blue;
+    }
+    span {
+      background: @color-red;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: @height;
+      width: 50%;
+
+      &:before {
+        display: block;
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 0px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 50px solid @color-white;
+      }
+    }
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 16px;
+    left: 6px;
+
+    @toolbarCloseColor:@color-red;
+    @toolbarMinColor:rgb(240, 199, 63);
+    @toolbarFullColor:rgb(109, 199, 90);
+    @toobarButtonSize: 12px;
+    & > .toolbarClose,
+    & > .toolbarMinimize,
+    & > .toobarFullscreen {
+      display: inline-block;
+      height: @toobarButtonSize;
+      width: @toobarButtonSize;
+      overflow: hidden;
+      border-radius: @toobarButtonSize;
+      border: 1px solid;
+      padding: 0;
+      text-align: center;
+      margin: 2px 4px;
+      cursor: pointer;
+      font-size: 9px;
+      transition: 100ms all;
+      line-height: 0;;
+    }
+
+    & > .toolbarClose {
+      background: @toolbarCloseColor;
+      border-color: darken(@toolbarCloseColor, 10%);
+      color: @toolbarCloseColor;
+      &:hover {
+        color: darken(@toolbarCloseColor, 30%);
+        border-color: @toolbarCloseColor;
+      }
+      &:active, &:focus {
+        background: darken(@toolbarCloseColor, 25%);
+        color: darken(@toolbarCloseColor, 25%);
+        border-color: darken(@toolbarCloseColor, 25%);
+      }
+    }
+    & > .toolbarMinimize {
+      background: @toolbarMinColor;
+      border-color: darken(@toolbarMinColor, 10%);
+      color: @toolbarMinColor;
+      &:hover {
+        color: darken(@toolbarMinColor, 30%);
+        border-color: @toolbarMinColor;
+      }
+      &:active, &:focus {
+        background: darken(@toolbarMinColor, 25%);
+        color: darken(@toolbarMinColor, 25%);
+        border-color: darken(@toolbarMinColor, 25%);
+      }
+    }
+    & > .toobarFullscreen {
+      background: @toolbarFullColor;
+      border-color: darken(@toolbarFullColor, 10%);
+      color: @toolbarFullColor;
+      &:hover {
+        color: darken(@toolbarFullColor, 30%);
+        border-color: @toolbarFullColor;
+      }
+      &:active, &:focus {
+        background: darken(@toolbarFullColor, 25%);
+        color: darken(@toolbarFullColor, 25%);
+        border-color: darken(@toolbarFullColor, 25%);
+      }
+    }
+  }
+}

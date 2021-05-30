@@ -1,0 +1,12 @@
+<div *ngIf="open" class="topico-list-overlay" (click)="close()"></div>
+<div *ngIf="open" class="topicos-list-box">
+    
+    <div class="topicos-list-content" *ngIf="topicos">
+        <button class="close" (click)="close()">x</button>
+        <div class="ct">
+        <div class="topico-item" *ngFor="let verbo of topicos.verbos" (click)="delete(verbo)">
+            <span class="label">{{verbo}}</span>
+        </div>
+        </div>
+    </div>
+</div>

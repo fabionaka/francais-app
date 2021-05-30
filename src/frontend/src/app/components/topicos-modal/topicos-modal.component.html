@@ -1,0 +1,12 @@
+<div *ngIf="open" class="topico-modal-overlay"></div>
+<div *ngIf="open" class="topico-modal-box">
+    <div class="topico-modal-box-content">
+        <form name="formVerbo">
+            <div class="ct">
+                <input type="text" [(ngModel)]="descricao" name="descricao" id="descricao" />
+                <button class="ok" (click)="submeter()">Ok 👍</button>
+                <button class="not-ok" (click)="close()">Annuler</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+@color-blue: #0055a4;
+@color-white: #fff;
+@color-red: #ef4135;
+.topico-list-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: fadeout(#9e9e9e, 70%);
+}
+.topicos-list-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  .topicos-list-content {
+    padding: 1em;
+    border-radius: 5px;
+    background: @color-white;
+    box-shadow: 1px 1px 5px 0px fadeout(#000, 80%);
+    width: 50%;
+    min-width: 200px;
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: @color-white;
+      border-radius: 4px;
+      height: 24px;
+      width: 24px;
+      border: none;
+      color: @color-blue;
+      font-family: "Montserrat", Helvetica, Arial, sans-serif;
+      cursor: pointer;
+      transition: 100ms all;
+
+      &:hover {
+        height: 32px;
+        width: 32px;
+        top: -15px;
+        right: -15px;
+        background: darken(@color-white, 10%);
+      }
+      &:active ,&:focus{
+        background: @color-blue;
+        color: @color-white;
+        transition: 50ms all;
+        height: 24px;
+        width: 24px;
+        top: -10px;
+        right: -10px;
+      }
+    }
+
+    .ct {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .topico-item {
+        border: 1px solid @color-blue;
+        color: @color-blue;
+        padding: 2px;
+        margin: 1px 2px;
+        border-radius: 2px;
+        flex-grow: 1;
+        min-width: 150px;
+        max-width: 150px;
+        text-transform: capitalize;
+        position: relative;
+        text-align: center;
+        transition: 100ms all;
+
+        .label {
+          display: inline-block;
+          font-size: 1.3em;
+        }
+
+        &:hover {
+          color: lighten(@color-red, 30%);
+          border-color: @color-red;
+          background-color: @color-red;
+          cursor: pointer;
+          &:after {
+            content: "x";
+            display: block;
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            top: 4px;
+            right: 2px;
+          }
+        }
+        &:active {
+          color: darken(@color-red, 50%);
+          border-color: darken(@color-red, 50%);
+          background-color: darken(@color-red, 30%);
+        }
+      }
+    }
+  }
+}

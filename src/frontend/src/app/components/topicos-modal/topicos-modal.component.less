@@ -1,0 +1,95 @@
+@color-blue: #0055a4;
+@color-white: #fff;
+@color-red: #ef4135;
+.topico-modal-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: fadeout(#9e9e9e, 70%);
+}
+.topico-modal-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  .topico-modal-box-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0px fadeout(#000, 80%);
+    
+    .ct {
+      min-width: 200px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      flex-direction: column;
+      align-content: center;
+      align-items: stretch;
+    }
+    input {
+      border: 1px solid fadeout(#9e9e9e, 30%);
+      color: darken(#9e9e9e, 20%);
+      padding: 4px;
+      display: block;
+      width: 100%;
+      height: 30px;
+      border-radius: 4px;
+      font-family: "montserrat", Arial, Helvetica, sans-serif;
+      margin-bottom: 10px;
+      transition: 500ms all;
+      &:focus{
+        outline-width: 0;
+        box-shadow: 0 0 5px fadeout(@color-blue, 20%);
+        border-color: fadeout(@color-blue, 70%);
+      }
+    }
+
+    button {
+      &.ok,
+      &.not-ok {
+        font-family: "montserrat", Arial, Helvetica, sans-serif;
+        margin-bottom: 5px;
+        border-width: 1px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 100ms all;
+      }
+
+      &.ok {
+        background-color: @color-blue;
+        border-color: darken(@color-blue, 10%);
+        color: darken(@color-white, 10%);
+        &:hover {
+          background-color: lighten(@color-blue, 5%);
+        }
+        &:active {
+          background: darken(@color-blue, 10%);
+          color: darken(@color-white, 25%);
+          border-color: darken(@color-blue, 10%);
+        }
+      }
+      &.not-ok {
+        background-color: @color-red;
+        border-color: darken(@color-red, 10%);
+        color: darken(@color-red, 30%);
+        margin-bottom: 0;
+        &:hover {
+          background-color: lighten(@color-red, 5%);
+        }
+        &:active {
+          background: darken(@color-red, 10%);
+          color: darken(@color-red, 50%);
+          border-color: darken(@color-red, 10%);
+        }
+      }
+    }
+  }
+}

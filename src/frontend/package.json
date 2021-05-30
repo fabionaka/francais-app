@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o=true --proxy-config proxy.conf.json --port=8964",
+    "start:web": "ng serve --proxy-config proxy.conf.json --port=8964",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "prod": "ng build --prod"
+  },
+  "private": true,
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    
+  }
+}

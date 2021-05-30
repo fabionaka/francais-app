@@ -1,0 +1,106 @@
+@color-blue: #0055a4;
+@color-white: #fff;
+@color-red: #ef4135;
+
+.topicos-wrapper {
+  display: flex;
+  height: 200px;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .topicos-panel {
+    background: #fff;
+    padding: 1em 2em;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 0px #0000001f;
+    min-width: 500px;
+
+    .topico-exercicio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+
+      .item {
+        padding: 0.5em;
+        flex-grow: 1;
+        button {
+          width: 100%;
+        }
+        span {
+          &.verbo,
+          &.pronome,
+          &.tipo {
+            border: 1px solid;
+            padding: 5px 0;
+            border-radius: 4px;
+            border-color: @color-blue;
+            color: @color-blue;
+            text-transform: uppercase;
+            width: 100%;
+            display: block;
+            text-align: center;
+          }
+        }
+        .text {
+          text-transform: capitalize;
+          display: block;
+          width: 100%;
+          text-align: center;
+          font-size: 2em;
+        }
+
+        &.full {
+          width: 100%;
+        }
+        &.lg {
+          width: 70%;
+        }
+        &.md {
+          width: 50%;
+        }
+        &.sm {
+          width: 25%;
+        }
+      }
+      .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+    }
+  }
+}
+button {
+  background: @color-blue;
+  color: darken(@color-white, 10%);
+  border: 1px solid darken(@color-blue, 10%);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 100ms all;
+  font-size: 1em;
+  font-family: "montserrat", Arial, Helvetica, sans-serif;
+
+  &:hover {
+    background: lighten(@color-blue, 5%);
+  }
+  &:active {
+    background: darken(@color-blue, 10%);
+    color: darken(@color-white, 25%);
+    border-color: darken(@color-blue, 10%);
+  }
+
+  &.secundario {
+    background: darken(@color-white, 15%);
+    color: darken(@color-white, 50%);
+    border-color: darken(@color-white, 20%);
+
+
+    &:active {
+      background: darken(@color-white, 30%);
+      color: darken(@color-white, 65%);
+      border-color: darken(@color-white, 30%);
+    }
+  }
+}
