@@ -2,14 +2,13 @@
   "name": "frontend",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve -o=true --proxy-config proxy.conf.json --port=8964",
-    "start:web": "ng serve --proxy-config proxy.conf.json --port=8964",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "prod": "ng build --prod"
+    "start": "./node_modules/.bin/ng serve -o=true --proxy-config proxy.conf.json --port=8964",
+    "start:web": "./node_modules/.bin/ng serve --proxy-config proxy.conf.json --port=8964",
+    "build": "./node_modules/.bin/ng build",
+    "test": "./node_modules/.bin/ng test",
+    "lint": "./node_modules/.bin/ng lint",
+    "e2e": "./node_modules/.bin/ng e2e",
+    "prod": "./node_modules/.bin/ng build --prod"
   },
   "private": true,
   "dependencies": {
